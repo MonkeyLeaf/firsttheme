@@ -3,8 +3,8 @@
 
 ## Template Terminology
 
-- Templates files
-- Template Tags
+- Templates files (Lesson 8 & 9)
+- Template Tags (Lesson 8 & 9)
 - Template Hierarchy
 - Page Templates
 
