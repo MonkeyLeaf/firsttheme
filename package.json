@@ -1,0 +1,28 @@
+{
+  "name": "firsttheme",
+  "version": "1.0.0",
+  "description": "## Section 1",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MonkeyLeaf/firsttheme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MonkeyLeaf/firsttheme/issues"
+  },
+  "homepage": "https://github.com/MonkeyLeaf/firsttheme#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
+    "@babel/register": "^7.12.13",
+    "gulp": "^4.0.2"
+  }
+}
