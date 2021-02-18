@@ -18,7 +18,20 @@
     <?php } ?>
     <?php the_posts_pagination(); ?>
 <?php } else { ?>
-    <p>Sorry, no posts matched your criteria.</p>
+    <p><?php esc_html_e('Sorry, no posts matched your criteria.', 'firsttheme'); ?></p>
 <?php } ?>
+
+<?php
+
+$city = 'london';
+echo esc_html__('Your city is ', 'firsttheme') . $city;
+echo '<br>';
+printf(esc_html__('Your city is %s', 'firsttheme'), $city);
+
+// TODO: comments
+//$comments = 1;
+//printf(_n('One comment', '%s comments', $comments, 'firsttheme'), $comments);
+
+?>
 
 <?php get_footer(); ?>
