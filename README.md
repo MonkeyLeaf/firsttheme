@@ -18,3 +18,5 @@
 
 - [Lesson 14 - Introduction to NPM & Gulp](.archives/sec03_less14.md)
 - [Lesson 15 - Setting Up NPM & Gulp](.archives/sec03_less15.md)
+- [Lesson 16 - Development vs Production in Gulp Tasks](.archives/sec03_less16.md)
+- [Lesson 17 - Creating a Gulp Task For Styles](.archives/sec03_less17.md)

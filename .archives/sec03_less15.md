@@ -1,4 +1,4 @@
-# Section 3 - Lesson 14
+# Section 3 - Lesson 15
 # Setting Up NPM and Gulp
 
 ## Setting NPM
