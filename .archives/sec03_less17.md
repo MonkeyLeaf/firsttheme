@@ -42,4 +42,16 @@
 - Tác dụng của __gulp-if__ để phụ trợ việc sử dụng các câu lệnh trong __pipe__ theo từng điều kiện nhất định.
 - Ví dụ ở block code trên, nếu __PRODUCTION__ tồn tại, pipe __cleanCSS__ mới được khởi chạy.
 
-- continue in 10:13
+## Chèn file css sau khi build vào giao diện.
+
+- tạo file __lib/enqueue-assets.php__ với code sau:
+  ```
+  function firsttheme_assets() {
+    wp_enqueue_style('firsttheme-stylesheet', get_template_directory_uri() . '/dist/assets/css/bundle.css', array(), '1.0.0', 'all');
+  }
+  add_action('wp_enqueue_scripts', 'firsttheme_assets');
+  ```
+- Kết quả khi refresh lại trang giao diện sẽ có 1 file bundle.css được nhúng vào. VD:
+  ```html
+  <link rel="stylesheet" id="firsttheme-stylesheet-css" href="http://localhost/wp-content/themes/firsttheme/dist/assets/css/bundle.css?ver=1.0.0" type="text/css" media="all">
+  ```

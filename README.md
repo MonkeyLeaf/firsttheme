@@ -20,3 +20,6 @@
 - [Lesson 15 - Setting Up NPM & Gulp](.archives/sec03_less15.md)
 - [Lesson 16 - Development vs Production in Gulp Tasks](.archives/sec03_less16.md)
 - [Lesson 17 - Creating a Gulp Task For Styles](.archives/sec03_less17.md)
+- [Lesson 18 - Creating a Gulp Task For Styles cont](.archives/sec03_less18.md)
+- [Lesson 19 - Compressing Images & Copying Files](.archives/sec03_less19.md)
+- [Lesson 20 - Cleaning Files & Serializing Tasks](.archives/sec03_less20.md)
