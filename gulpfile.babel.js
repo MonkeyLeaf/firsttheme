@@ -5,6 +5,7 @@ import cleanCSS from 'gulp-clean-css';
 import gulpif from 'gulp-if';
 import sourcemaps from 'gulp-sourcemaps';
 import imagemin from 'gulp-imagemin';
+import del from 'del';
 
 const PRODUCTION = yargs.argv.prod;
 
@@ -26,6 +27,8 @@ const paths = {
     }
 }
 
+export const clean = () => del(['dist']);
+
 export const styles = () => {
     return gulp.src(paths.styles.src)
         .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
@@ -37,6 +40,8 @@ export const styles = () => {
 
 export const watch = () => {
     gulp.watch('src/assets/scss/**/*.scss', styles);
+    gulp.watch(paths.images.src, images);
+    gulp.watch(paths.other.src, copy);
 }
 
 export const images = () => {
@@ -50,4 +55,33 @@ export const copy = () => {
         .pipe(gulp.dest(paths.other.dest));
 }
 
-// export default styles;
+export const scripts = () => {
+    return gulp.src(paths.scripts.src)
+        .pipe(webpack({
+            module: {
+                rules: [
+                    {
+                        test: /\.js$/,
+                        use: {
+                            loader: 'babel-loader',
+                            options: {
+                                presets: ['@babel/preset-env'] //or ['babel-preset-env']
+                            }
+                        }
+                    }
+                ]
+            },
+            output: {
+                filename: 'bundle.js'
+            },
+            devtool: !PRODUCTION ? 'inline-source-map' : false,
+            mode: PRODUCTION ? 'production' : 'development' //add this
+        }))
+        .pipe(gulpif(PRODUCTION, uglify())) //you can skip this now since mode will already minify
+        .pipe(gulp.dest(paths.scripts.dest));
+}
+
+export const dev = gulp.series(clean, gulp.parallel(styles, images, copy), watch);
+export const build = gulp.series(clean, gulp.parallel(styles, images, copy));
+
+export default dev;

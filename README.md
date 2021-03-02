@@ -23,3 +23,5 @@
 - [Lesson 18 - Creating a Gulp Task For Styles cont](.archives/sec03_less18.md)
 - [Lesson 19 - Compressing Images & Copying Files](.archives/sec03_less19.md)
 - [Lesson 20 - Cleaning Files & Serializing Tasks](.archives/sec03_less20.md)
+- [Lesson 21 - Webpack Update Note](.archives/sec03_less21.md)
+- [Lesson 22 - Creating A Gulp Task For Javascript](.archives/sec03_less22.md)
