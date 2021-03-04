@@ -6,6 +6,8 @@ import gulpif from 'gulp-if';
 import sourcemaps from 'gulp-sourcemaps';
 import imagemin from 'gulp-imagemin';
 import del from 'del';
+import webpack from 'webpack-stream';
+import uglify from 'gulp-uglify';
 
 const PRODUCTION = yargs.argv.prod;
 
@@ -24,7 +26,11 @@ const paths = {
     other: {
         src: ['src/assets/**/*', '!src/assets/{images,js,scss}', '!src/assets/{images,js,scss}/**/*'],
         dest: 'dist/assets',
-    }
+    },
+    scripts: {
+        src: 'src/assets/js/bundle.js',
+        dest: 'dist/assets/js',
+    },
 }
 
 export const clean = () => del(['dist']);
@@ -58,6 +64,7 @@ export const copy = () => {
 export const scripts = () => {
     return gulp.src(paths.scripts.src)
         .pipe(webpack({
+            mode: PRODUCTION ? 'production' : 'development',
             module: {
                 rules: [
                     {
@@ -75,13 +82,12 @@ export const scripts = () => {
                 filename: 'bundle.js'
             },
             devtool: !PRODUCTION ? 'inline-source-map' : false,
-            mode: PRODUCTION ? 'production' : 'development' //add this
         }))
-        .pipe(gulpif(PRODUCTION, uglify())) //you can skip this now since mode will already minify
+        .pipe(gulpif(PRODUCTION, uglify()))
         .pipe(gulp.dest(paths.scripts.dest));
 }
 
-export const dev = gulp.series(clean, gulp.parallel(styles, images, copy), watch);
-export const build = gulp.series(clean, gulp.parallel(styles, images, copy));
+export const dev = gulp.series(clean, gulp.parallel(styles, images, copy, scripts), watch);
+export const build = gulp.series(clean, gulp.parallel(styles, images, copy, scripts));
 
 export default dev;
