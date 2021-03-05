@@ -26,3 +26,4 @@
 - [Lesson 21 - Webpack Update Note](.archives/sec03_less21.md)
 - [Lesson 22 - Creating A Gulp Task For Javascript](.archives/sec03_less22.md)
 - [Lesson 23 - Creating A Gulp Task For Javascript cont](.archives/sec03_less23.md)
+- [Lesson 24 - Adding JavaScript Plugins The Right Way](.archives/sec03_less24.md)

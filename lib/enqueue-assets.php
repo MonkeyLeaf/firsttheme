@@ -9,6 +9,8 @@ function firsttheme_assets() {
         'all'
     );
 
+    wp_enqueue_style('jquery');
+
     wp_enqueue_script('firsttheme-scripts', get_template_directory_uri() . '/dist/assets/js/bundle.js', array(), '1.0.0', true);
 }
 
