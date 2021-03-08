@@ -9,28 +9,28 @@
              </a>
         </h2>
         <div>
-            <?php firsttheme_post_meta(); ?>
+            <?php _themename_post_meta(); ?>
         </div>
         <div>
             <?php the_excerpt(); ?>
         </div>
-        <?php firsttheme_read_more_link(); ?>
+        <?php _themename_read_more_link(); ?>
     <?php } ?>
     <?php the_posts_pagination(); ?>
 <?php } else { ?>
-    <p><?php esc_html_e('Sorry, no posts matched your criteria.', 'firsttheme'); ?></p>
+    <p><?php esc_html_e('Sorry, no posts matched your criteria.', '_themename'); ?></p>
 <?php } ?>
 
 <?php
 
 $city = 'london';
-echo esc_html__('Your city is ', 'firsttheme') . $city;
+echo esc_html__('Your city is ', '_themename') . $city;
 echo '<br>';
-printf(esc_html__('Your city is %s', 'firsttheme'), $city);
+printf(esc_html__('Your city is %s', '_themename'), $city);
 
 // TODO: comments
 //$comments = 1;
-//printf(_n('One comment', '%s comments', $comments, 'firsttheme'), $comments);
+//printf(_n('One comment', '%s comments', $comments, '_themename'), $comments);
 
 ?>
 

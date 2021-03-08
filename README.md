@@ -27,4 +27,6 @@
 - [Lesson 22 - Creating A Gulp Task For Javascript](.archives/sec03_less22.md)
 - [Lesson 23 - Creating A Gulp Task For Javascript cont](.archives/sec03_less23.md)
 - [Lesson 24 - Adding JavaScript Plugins The Right Way](.archives/sec03_less24.md)
-- [Lesson 25 - Improving The Tasks With Browsersync](.archives/sec03_less25.md)
+- [Lesson 25 - Improving The Tasks With Browser Sync](.archives/sec03_less25.md)
+- [Lesson 26 - Bundling Files For Production](.archives/sec03_less26.md)
+- [Lesson 27 - Creating a Replaceable Placeholder Prefix](.archives/sec03_less27.md)

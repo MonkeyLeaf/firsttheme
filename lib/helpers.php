@@ -1,10 +1,10 @@
 <?php
 
-function firsttheme_post_meta(): void
+function _themename_post_meta(): void
 {
     /* translators: %s: Post Date */
     printf(
-        esc_html__('Posted on %s', 'firsttheme'),
+        esc_html__('Posted on %s', '_themename'),
         '<a href="'. esc_url(get_permalink()) .'">'.
             '<time datetime="'. esc_attr(get_the_date('c')) .'">'. esc_html(get_the_date('l, F j, Y')) .'</time>'.
         '</a> '
@@ -16,13 +16,13 @@ function firsttheme_post_meta(): void
     );
 }
 
-function firsttheme_read_more_link(): void
+function _themename_read_more_link(): void
 {
     echo '<a href="'. esc_url(get_permalink()) .'" title="'. the_title_attribute(['echo' => false]) .'">';
     /* translators: %s: Post Title */
     printf(
         wp_kses(
-            __('Read More <span class="u-screen-reader-text">About %s</span>', 'firsttheme'),
+            __('Read More <span class="u-screen-reader-text">About %s</span>', '_themename'),
             [
                 'span' => [
                     'class' => []
